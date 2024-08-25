@@ -51,7 +51,7 @@ if __name__ == "__main__":
             else:
                 operar_carro(carro2)
 
-            print('Infos atuais dos carros')
+            print('Informações atuais dos carros')
             print(carro1)
             print(carro2)
         except Exception as e:
