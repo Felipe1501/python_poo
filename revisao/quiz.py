@@ -43,3 +43,4 @@ class Quiz3A(Quiz):
 
     def calcular_pontos(self):
         return max(0, self.get_acertos() - (2 * self.get_erros()))
+
