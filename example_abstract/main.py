@@ -6,7 +6,7 @@ if __name__ == '__main__':
     if g1.autenticar("313131313", 31141414):
         print(g1.cancelar_operacao())
     else:
-        print("Erro")
+        print("Erro!!")
 
     op1 = Operador_Caixa("Jao", "1431414", 314141441414, 2)
     if op1.autenticar("2", 233):
