@@ -1,6 +1,6 @@
 import pickle
 import traceback
-import manage_ballotbox
+import gerenciar_urna
 from common import *
 
 FILE_ELEITORES = 'eleitores.pkl'
@@ -13,8 +13,7 @@ def menu():
     print("4-Listar Candidatos")
     print("5-Iniciar Urna")
     print("6-Testar Urna")
-    print("7-Encerrar Urna")
-    print("8-Sair")
+    print("7-Sair")
     op = int(input("Digite a opcao [1 a 7]? "))
     while op not in range(1, 8):
         op = int(input("Digite a opcao [1 a 7]? "))
@@ -118,18 +117,13 @@ if __name__ == "__main__":
             elif opcao == 4:
                 listar_candidatos(candidatos)
             elif opcao == 5:
-                urna = manage_ballotbox.iniciar_urna(eleitores.values(),
+                urna = gerenciar_urna.iniciar_urna(eleitores.values(),
                                                    candidatos.values())
-                print(urna)
-                urna.zeresima()
             elif opcao == 6:
-                manage_ballotbox.votar(urna)
+                gerenciar_urna.votar(urna)
             elif opcao == 7:
-                print(urna)
-                urna.encerrar_urna()
-                break
-            elif opcao == 8:
                 print("Saindo!")
+                break
         except Exception as e:
             #traceback.print_exc()
             print(e)

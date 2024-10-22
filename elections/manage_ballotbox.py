@@ -1,5 +1,7 @@
 from common import *
-from election import Urna
+from eleicao import Urna
+
+
 
 def iniciar_urna(eleitores, candidatos):
     print("Iniciando Urna")
@@ -25,5 +27,5 @@ def votar(urna : Urna):
     print(eleitor)
     print("Pode votar!")
     print("===========")
-    voto = int(input("Digite o numero do candidato ou 0 para votar Branco: "))
+    voto = int(input("Digite o numero do candidato: "))
     urna.registrar_voto(eleitor, voto)

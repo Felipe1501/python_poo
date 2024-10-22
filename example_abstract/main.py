@@ -18,4 +18,4 @@ if __name__ == '__main__':
     if seguranca.autenticar("90", 12234):
         print(seguranca.acionar_alarme())
     else:
-        print("Negativo capita!")
+        print("Negativo capita!!!")
