@@ -9,20 +9,12 @@ print(jogador2)
 soco = Soco()
 chute = Chute()
 revolver = Revolver()
+lanca_chamas = Lanca_Chamas()
+faca = Faca()
 
-jogador1.bater(soco, jogador2)
-jogador2.bater(chute, jogador1)
-jogador1.atirar(revolver, jogador2)
-jogador1.atirar(revolver, jogador2)
-jogador1.atirar(revolver, jogador2)
-jogador1.atirar(revolver, jogador2)
-jogador1.atirar(revolver, jogador2)
-jogador1.atirar(revolver, jogador2)
-jogador1.atirar(revolver, jogador2)
+jogador1.bater(faca, jogador2)
 
-revolver.recarregar()
 
-print(jogador2)
 
 print(jogador2)
 print(jogador1)
