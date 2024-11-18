@@ -14,7 +14,7 @@ class Arma(ABC):
     def __str__(self):
         return f"Destruicao: {self.destruicao}"
 
-class Faca(ABC):
+class Faca(Arma):
     lamina: int
 
     def __init__(self, X):
@@ -26,7 +26,7 @@ class Faca(ABC):
            self.lamina -= 1
            CHAR.energia -= self.destruicao
         else:
-            super().agredir()
+            super().agredir(CHAR)
 
 
 class Soco_Ingles(Faca, Soco):
@@ -34,4 +34,46 @@ class Soco_Ingles(Faca, Soco):
         super().agredir(CHAR)
         self.golpear(CHAR)
 
+
+class Disparavel(ABC):
+    @abstractmethod
+    def disparar(self, CHAR):
+        pass
+
+    @abstractmethod
+    def recarregar(self):
+        pass
+
+class Revolver(Arma, Disparavel):
+    cartuchos: int
+
+    def __init__(self):
+        self.cartuchos = 6
+        self.destruicao = 20
+
+
+    def disparar(self, CHAR):
+        if self.cartuchos > 0:
+            self.cartuchos -= 1
+            CHAR.energia -= self.destruicao
+
+    def recarregar(self):
+        self.cartuchos = 6
+
+
+class Lanca_Chamas(Arma, Disparavel):
+    gas: float
+
+    def __init__(self):
+        self.destruicao = 30
+        self.gas = 100
+
+
+    def disparar(self, CHAR):
+        if self.gas > 0:
+            self.gas -= 5.5
+            CHAR.energia -= self.destruicao
+
+    def recarregar(self):
+        self.gas = 100
 
